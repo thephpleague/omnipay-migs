@@ -2,7 +2,7 @@
 
 namespace Omnipay\Migs;
 
-use Omnipay\GatewayTestCase;
+use Omnipay\Tests\GatewayTestCase;
 
 class ThreePartyGatewayTest extends GatewayTestCase
 {

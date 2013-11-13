@@ -2,7 +2,7 @@
 
 namespace Omnipay\Migs\Message;
 
-use Omnipay\TestCase;
+use Omnipay\Tests\TestCase;
 
 class TwoPartyPurchaseResponseTest extends TestCase
 {
