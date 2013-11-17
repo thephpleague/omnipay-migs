@@ -29,7 +29,7 @@ And run composer to update your dependencies:
 
 ## Basic Usage
 
-The following gatmigss are provided by this package:
+The following gateways are provided by this package:
 
 * Migs_TwoParty
 * Migs_ThreeParty
