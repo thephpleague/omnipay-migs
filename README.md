@@ -6,7 +6,7 @@
 [![Latest Stable Version](https://poser.pugx.org/omnipay/migs/version.png)](https://packagist.org/packages/omnipay/migs)
 [![Total Downloads](https://poser.pugx.org/omnipay/migs/d/total.png)](https://packagist.org/packages/omnipay/migs)
 
-[Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gatmigs payment
+[Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements MIGS support for Omnipay.
 
 ## Installation
