@@ -11,7 +11,7 @@
         "pay",
         "payment"
     ],
-    "homepage": "https://github.com/omnipay/migs",
+    "homepage": "https://github.com/thephpleague/omnipay-migs",
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +20,7 @@
         },
         {
             "name": "Omnipay Contributors",
-            "homepage": "https://github.com/omnipay/migs/contributors"
+            "homepage": "https://github.com/thephpleague/omnipay-migs/contributors"
         }
     ],
     "autoload": {
