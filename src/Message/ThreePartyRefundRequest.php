@@ -32,5 +32,4 @@ class ThreePartyRefundRequest extends AbstractRequest
     {
         return $this->endpoint.'vpcdps';
     }
-
 }
