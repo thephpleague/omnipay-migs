@@ -36,4 +36,14 @@ class ThreePartyGatewayTest extends GatewayTestCase
 
         $this->assertSame('10.00', $request->getAmount());
     }
+
+    public function testRefund()
+    {
+        $request = $this->gateway->refund(array('amount' => '10.00', 'transactionNo' => '1112'));
+
+        $this->assertInstanceOf('\Omnipay\Migs\Message\ThreePartyRefundRequest', $request);
+
+        $this->assertSame('10.00', $request->getAmount());
+    }
+
 }
