@@ -8,6 +8,7 @@ namespace Omnipay\Migs\Message;
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     protected $endpoint = 'https://migs.mastercard.com.au/';
+    protected $endpointTEST = 'https://migs-mtf.mastercard.com.au/';
 
     public function getMerchantId()
     {
