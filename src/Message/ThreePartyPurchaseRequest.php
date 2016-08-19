@@ -28,10 +28,10 @@ class ThreePartyPurchaseRequest extends AbstractRequest
 
     public function getEndpoint()
     {
-      	 if($this->getParameter('testMode')){
-          return $this->endpointTEST.'vpcpay';
-      	 }else{
-          return $this->endpoint.'vpcpay';
-      	 }
+        if($this->getParameter('testMode')){
+         return $this->endpointTEST.'vpcpay';
+        }else{
+         return $this->endpoint.'vpcpay';
+        }
     }
 }
