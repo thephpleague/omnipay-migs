@@ -67,12 +67,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
         $hash = null;
         foreach ($data as $k => $v) {
-            if ((strlen($v) > 0) && ((substr($k, 0,4)=="vpc_") || (substr($k,0,5) =="user_"))) {
+            if ((strlen($v) > 0) && ((substr($k, 0, 4)=="vpc_") || (substr($k, 0, 5) =="user_"))) {
                 $hash .= $k . "=" . $v . "&";
             }
         }
         $hash = rtrim($hash, "&");
 
-        return strtoupper(hash_hmac('SHA256', $hash, pack('H*',$this->getSecureHash())));
+        return strtoupper(hash_hmac('SHA256', $hash, pack('H*', $this->getSecureHash())));
     }
 }
