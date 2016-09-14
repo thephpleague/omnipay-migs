@@ -23,4 +23,9 @@ class ThreePartyGateway extends TwoPartyGateway
     {
         return $this->createRequest('\Omnipay\Migs\Message\ThreePartyCompletePurchaseRequest', $parameters);
     }
+
+    public function refund(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Migs\Message\ThreePartyRefundRequest', $parameters);
+    }
 }
