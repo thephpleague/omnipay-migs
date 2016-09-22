@@ -67,6 +67,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
         $hash = null;
         foreach ($data as $k => $v) {
+            // Skip vpc_ keys that are not included in the hash calculation
+            if (in_array($k, array('vpc_SecureHash', 'vpc_SecureHashType'))) {
+                continue;
+            }
+
             if ((strlen($v) > 0) && ((substr($k, 0, 4)=="vpc_") || (substr($k, 0, 5) =="user_"))) {
                 $hash .= $k . "=" . $v . "&";
             }
