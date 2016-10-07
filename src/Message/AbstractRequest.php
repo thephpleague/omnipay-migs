@@ -72,7 +72,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
                 continue;
             }
 
-            if ((strlen($v) > 0) && ((substr($k, 0, 4)=="vpc_") || (substr($k, 0, 5) =="user_"))) {
+            if ((strlen($v) > 0)  && ($k != "vpc_SecureHash") && ($k != "vpc_SecureHashType") && ((substr($k, 0, 4)=="vpc_") || (substr($k, 0, 5) =="user_"))) {
                 $hash .= $k . "=" . $v . "&";
             }
         }
