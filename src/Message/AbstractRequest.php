@@ -39,6 +39,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('secureHash', $value);
     }
+    
+    public function getLocaleCode()
+    {
+        return $this->getParameter('localeCode');
+    }
+
+    public function setLocaleCode($value)
+    {
+        return $this->setParameter('localeCode', $value);
+    }
 
     protected function getBaseData()
     {
@@ -46,7 +56,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['vpc_Merchant']   = $this->getMerchantId();
         $data['vpc_AccessCode'] = $this->getMerchantAccessCode();
         $data['vpc_Version']    = '1';
-        $data['vpc_Locale']     = 'en';
+        $data['vpc_Locale']     = $this->getLocaleCode();
         $data['vpc_Command']    = $this->action;
         $data['vpc_Amount']      = $this->getAmountInteger();
         $data['vpc_MerchTxnRef'] = $this->getTransactionId();
