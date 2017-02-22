@@ -18,6 +18,7 @@ class ThreePartyPurchaseRequestTest extends TestCase
                 'amount'             => '12.00',
                 'transactionId'      => 123,
                 'returnUrl'          => 'https://www.example.com/return',
+                'localeCode'         => 'en',
 
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
@@ -37,6 +38,7 @@ class ThreePartyPurchaseRequestTest extends TestCase
                 'amount'             => '12.00',
                 'transactionId'      => 123,
                 'returnUrl'          => 'https://www.example.com/return',
+                'localeCode'         => 'en',
 
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
