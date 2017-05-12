@@ -40,14 +40,44 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('secureHash', $value);
     }
     
-    public function getLocaleCode()
+	public function getLocaleCode()
+	{
+		return $this->getParameter('localeCode');
+	}
+ 
+	public function setLocaleCode($value)
+	{
+		return $this->setParameter('localeCode', $value);
+	}
+ 
+    public function getTransactionNo()
     {
-        return $this->getParameter('localeCode');
+        return $this->getParameter('transactionNo');
     }
-
-    public function setLocaleCode($value)
+    
+    public function setTransactionNo($value)
     {
-        return $this->setParameter('localeCode', $value);
+        return $this->setParameter('transactionNo', $value);
+    }
+    
+    public function getUser()
+    {
+        return $this->getParameter('user');
+    }
+    
+    public function setUser($value)
+    {
+        return $this->setParameter('user', $value);
+    }
+    
+    public function getPassword()
+    {
+        return $this->getParameter('password');
+    }
+    
+    public function setPassword($value)
+    {
+        return $this->setParameter('password', $value);
     }
 
     protected function getBaseData()
