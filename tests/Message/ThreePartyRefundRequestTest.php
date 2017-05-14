@@ -17,8 +17,6 @@ class ThreePartyRefundRequestTest extends TestCase
             array(
                 'amount'             => '12.00',
                 'transactionId'      => 123,
-                
-                'localeCode'         => 'en',
 
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
@@ -33,7 +31,7 @@ class ThreePartyRefundRequestTest extends TestCase
 
         $data = $this->request->getData();
         
-        $this->assertSame('F67A5B37393F0903E228C27DD3FF5704DAD672137108BE78E0A9219F229733B7', $data['vpc_SecureHash']);
+        $this->assertSame('80E8AD6C582431F9C8A55C9645EE2F05BA70D178EB0A85E7394331DC09B61875', $data['vpc_SecureHash']);
     }
 
     /**
@@ -48,8 +46,6 @@ class ThreePartyRefundRequestTest extends TestCase
             array(
                 'amount'             => '12.00',
                 'transactionId'      => 123,
-                
-                'localeCode'         => 'en',
 
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
