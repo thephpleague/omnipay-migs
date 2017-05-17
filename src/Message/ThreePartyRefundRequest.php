@@ -8,7 +8,6 @@ namespace Omnipay\Migs\Message;
 class ThreePartyRefundRequest extends AbstractRequest
 {
     protected $action = 'refund';
-    
     public function getData()
     {
         $this->validate('amount', 'transactionId', 'user', 'password');

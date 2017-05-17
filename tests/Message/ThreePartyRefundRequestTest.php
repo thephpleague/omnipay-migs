@@ -21,23 +21,20 @@ class ThreePartyRefundRequestTest extends TestCase
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
                 'secureHash'         => '123',
-                
-                'transactionNo' => '1112', 
-                
-                'user' => 'amauser', 
+
+                'transactionNo' => '1112',
+
+                'user' => 'amauser',
                 'password' => 'amapassword'
             )
         );
 
         $data = $this->request->getData();
-        
+
         $this->assertSame('80E8AD6C582431F9C8A55C9645EE2F05BA70D178EB0A85E7394331DC09B61875', $data['vpc_SecureHash']);
     }
 
     /**
-     * Test testRefund method
-     *
-     * @return void
      * @depends testSignature
      */
     public function testRefund()
@@ -51,9 +48,9 @@ class ThreePartyRefundRequestTest extends TestCase
                 'merchantAccessCode' => '123',
                 'secureHash'         => '123',
                 
-                'transactionNo' => '1112', 
-                
-                'user' => 'amauser', 
+                'transactionNo' => '1112',
+
+                'user' => 'amauser',
                 'password' => 'amapassword'
             )
         );
@@ -63,6 +60,9 @@ class ThreePartyRefundRequestTest extends TestCase
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertSame('7', $response->getCode());
-        $this->assertSame('E5000: Merchant [123] does not have the required privilege to use the VirtualPaymentClient API.', $response->getMessage());
+        $this->assertSame(
+            'E5000: Merchant [123] does not have the required privilege to use the VirtualPaymentClient API.',
+            $response->getMessage()
+        );
     }
 }

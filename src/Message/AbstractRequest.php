@@ -39,42 +39,42 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('secureHash', $value);
     }
-    
-	public function getLocaleCode()
-	{
-		return $this->getParameter('localeCode');
-	}
- 
-	public function setLocaleCode($value)
-	{
-		return $this->setParameter('localeCode', $value);
-	}
- 
+
+    public function getLocaleCode()
+    {
+        return $this->getParameter('localeCode');
+    }
+
+    public function setLocaleCode($value)
+    {
+        return $this->setParameter('localeCode', $value);
+    }
+
     public function getTransactionNo()
     {
         return $this->getParameter('transactionNo');
     }
-    
+
     public function setTransactionNo($value)
     {
         return $this->setParameter('transactionNo', $value);
     }
-    
+
     public function getUser()
     {
         return $this->getParameter('user');
     }
-    
+
     public function setUser($value)
     {
         return $this->setParameter('user', $value);
     }
-    
+
     public function getPassword()
     {
         return $this->getParameter('password');
     }
-    
+
     public function setPassword($value)
     {
         return $this->setParameter('password', $value);
@@ -90,7 +90,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['vpc_Amount']      = $this->getAmountInteger();
         $data['vpc_MerchTxnRef'] = $this->getTransactionId();
         
-        if($this->action != 'refund'){
+        if ($this->action != 'refund') {
             $data['vpc_Locale']      = $this->getLocaleCode() != null ? $this->getLocaleCode() : 'en';
             $data['vpc_OrderInfo']   = $this->getDescription();
             $data['vpc_ReturnURL']   = $this->getReturnUrl();
