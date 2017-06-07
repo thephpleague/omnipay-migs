@@ -58,7 +58,7 @@ class TwoPartyPurchaseRequestTest extends TestCase
         $this->assertFalse($response->isRedirect());
         $this->assertEquals('12345', $response->getTransactionReference());
         $this->assertSame('Approved', $response->getMessage());
-        $this->assertNull($response->getCode());
+        $this->assertSame('0', $response->getCode());
         $this->assertArrayHasKey('vpc_SecureHash', $response->getData());
     }
 }

@@ -16,7 +16,7 @@ class TwoPartyPurchaseResponseTest extends TestCase
         $this->assertFalse($response->isRedirect());
         $this->assertSame('12345', $response->getTransactionReference());
         $this->assertSame('Approved', $response->getMessage());
-        $this->assertNull($response->getCode());
+        $this->assertSame('0', $response->getCode());
     }
 
     public function testTwoPartyPurchaseFailure()
@@ -29,6 +29,6 @@ class TwoPartyPurchaseResponseTest extends TestCase
         $this->assertFalse($response->isRedirect());
         $this->assertSame('12345', $response->getTransactionReference());
         $this->assertSame('Declined', $response->getMessage());
-        $this->assertNull($response->getCode());
+        $this->assertSame('2', $response->getCode());
     }
 }

@@ -21,7 +21,7 @@ class Response extends AbstractResponse
 
     public function isSuccessful()
     {
-        return isset($this->data['vpc_TxnResponseCode']) && "0" === $this->data['vpc_TxnResponseCode'];
+        return "0" === $this->getCode();
     }
 
     public function getTransactionReference()
@@ -32,5 +32,10 @@ class Response extends AbstractResponse
     public function getMessage()
     {
         return isset($this->data['vpc_Message']) ? $this->data['vpc_Message'] : null;
+    }
+    
+    public function getCode()
+    {
+        return isset($this->data['vpc_TxnResponseCode']) ? $this->data['vpc_TxnResponseCode'] : null;
     }
 }
