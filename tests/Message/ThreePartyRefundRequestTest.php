@@ -47,14 +47,14 @@ class ThreePartyRefundRequestTest extends TestCase
                 'merchantId'         => '123',
                 'merchantAccessCode' => '123',
                 'secureHash'         => '123',
-                
+
                 'transactionNo' => '1112',
 
                 'user' => 'amauser',
                 'password' => 'amapassword'
             )
         );
-        
+
         $response = $this->request->send();
         $this->assertInstanceOf('Omnipay\Migs\Message\Response', $response);
         $this->assertFalse($response->isSuccessful());
