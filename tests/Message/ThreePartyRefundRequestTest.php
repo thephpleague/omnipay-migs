@@ -39,23 +39,8 @@ class ThreePartyRefundRequestTest extends TestCase
      */
     public function testRefund()
     {
-        $this->request->initialize(
-            array(
-                'amount'             => '12.00',
-                'transactionId'      => 123,
-
-                'merchantId'         => '123',
-                'merchantAccessCode' => '123',
-                'secureHash'         => '123',
-                
-                'transactionNo' => '1112',
-
-                'user' => 'amauser',
-                'password' => 'amapassword'
-            )
-        );
-        
-        $response = $this->request->send();
+        $httpResponse = $this->getMockHttpResponse('ThreePartyRefundFailure.txt');
+        $response = new Response($this->getMockRequest(), $httpResponse->getBody());
         $this->assertInstanceOf('Omnipay\Migs\Message\Response', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
