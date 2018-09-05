@@ -8,6 +8,7 @@ namespace Omnipay\Migs\Message;
 class ThreePartyRefundRequest extends AbstractRequest
 {
     protected $action = 'refund';
+
     public function getData()
     {
         $this->validate('amount', 'transactionId', 'user', 'password');
@@ -23,7 +24,7 @@ class ThreePartyRefundRequest extends AbstractRequest
     {
         $httpResponse = $this->httpClient->request('POST', $this->getEndpoint(), [], http_build_query($data));
 
-        return $this->response = new Response($this, $httpResponse->getBody());
+        return $this->response = new Response($this, $httpResponse->getBody()->getContents());
     }
 
     public function getEndpoint()
