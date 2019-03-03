@@ -27,7 +27,11 @@ class TwoPartyPurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $httpResponse = $this->httpClient->request('POST', $this->getEndpoint(), [], http_build_query($data));
+        $headers = [
+          'Content-Type'  => 'application/x-www-form-urlencoded',
+        ];
+
+        $httpResponse = $this->httpClient->request('POST', $this->getEndpoint(), $headers, http_build_query($data));
 
         return $this->response = new Response($this, $httpResponse->getBody()->getContents());
     }
