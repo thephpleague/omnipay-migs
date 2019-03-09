@@ -94,6 +94,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $data['vpc_Locale']      = $this->getLocaleCode() != null ? $this->getLocaleCode() : 'en';
             $data['vpc_OrderInfo']   = $this->getDescription();
             $data['vpc_ReturnURL']   = $this->getReturnUrl();
+            $data['vpc_Currency']   = $this->getCurrency();
         }
 
         return $data;
