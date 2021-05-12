@@ -22,7 +22,7 @@ class ThreePartyPurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $redirectUrl = $this->getEndpoint().'?'.http_build_query($data);
+        $redirectUrl = $this->getEndpoint();
 
         return $this->response = new ThreePartyPurchaseResponse($this, $data, $redirectUrl);
     }

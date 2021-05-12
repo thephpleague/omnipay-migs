@@ -36,11 +36,11 @@ class ThreePartyPurchaseResponse extends AbstractResponse implements RedirectRes
 
     public function getRedirectMethod()
     {
-        return 'GET';
+        return 'POST';
     }
 
     public function getRedirectData()
     {
-        return $this->getData();
+        return array_filter($this->getData());
     }
 }
