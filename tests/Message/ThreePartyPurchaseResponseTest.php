@@ -19,7 +19,7 @@ class ThreePartyPurchaseResponseTest extends TestCase
         $this->assertSame($data, $response->getData());
 
         $this->assertSame('https://example.com/', $response->getRedirectUrl());
-        $this->assertSame('GET', $response->getRedirectMethod());
+        $this->assertSame('POST', $response->getRedirectMethod());
         $this->assertSame($data, $response->getRedirectData());
     }
 }

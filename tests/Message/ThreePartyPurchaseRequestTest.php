@@ -56,7 +56,7 @@ class ThreePartyPurchaseRequestTest extends TestCase
         $this->assertNull($response->getCode());
 
         $this->assertStringStartsWith('https://migs.mastercard.com.au/vpcpay?', $response->getRedirectUrl());
-        $this->assertSame('GET', $response->getRedirectMethod());
+        $this->assertSame('POST', $response->getRedirectMethod());
         $this->assertArrayHasKey('vpc_SecureHash', $response->getData());
     }
 }
